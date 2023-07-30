@@ -36,7 +36,7 @@ public func ffprobe(_ args: [String]) -> Int {
 }
 
 func run(tool: (Int32, UnsafeMutablePointer<UnsafeMutablePointer<CChar>?>?) -> Int32, args: [String]) -> Int {
-    print(#function, args)
+//    print(#function, args)
     var argv = args.map { strdup($0) } // FIXME: free
     let ret = tool(Int32(args.count), &argv)
     return Int(ret)
